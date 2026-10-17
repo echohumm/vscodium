@@ -38,7 +38,6 @@ makedepends=(
     'python'
     'python-distutils-extra'
     'pkg-config'
-    'rustup'
 )
 source=(
     "${pkgname}.desktop"
@@ -107,8 +106,6 @@ build() {
     	exit 1
     fi
     echo "Installed version of node ["$(node --version)"] matches required version ["$nvmrc_version"], continuing."
-
-    rustup default stable
 
     # Remove old build
     if [ -d "vscode" ]; then
